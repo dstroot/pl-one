@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroWash renders some content 1`] = `
+<div
+  style={
+    Object {
+      "backgroundImage": "linear-gradient(to top, rgba(0, 142, 215, 0.9), rgba(0, 142, 215, 0.4)), url(https://www.pacificlife.com/content/dam/paclife/crp/images/brand/Brand_hero.jpg)",
+      "backgroundPosition": "center",
+      "backgroundRepeat": "no-repeat",
+      "backgroundSize": "cover",
+      "height": "40vw",
+      "minHeight": "325px",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "bottom": "5vw",
+        "color": "white",
+        "position": "absolute",
+        "textAlign": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <img
+      alt="hero"
+      className="d-block-inline"
+      src=""
+    />
+    <p
+      style={
+        Object {
+          "fontSize": "calc(32px + 1.5vw + 0.5vmin)",
+          "fontWeight": "500",
+          "marginBottom": "0",
+        }
+      }
+    >
+      You. Protected.
+    </p>
+    <p
+      style={
+        Object {
+          "fontSize": "calc(8px + 1.5vw + 0.5vmin)",
+          "fontWeight": "300",
+          "marginBottom": "0",
+          "marginTop": "-0.5vw",
+        }
+      }
+    >
+      Our mission is protecting your financial future.
+    </p>
+    <p
+      style={
+        Object {
+          "fontSize": "calc(8px + 1.5vw + 0.5vmin)",
+          "fontWeight": "300",
+          "marginBottom": "0",
+          "marginTop": "-0.5vw",
+        }
+      }
+    >
+      We’ve fulfilled our promise for 150 years.
+    </p>
+  </div>
+</div>
+`;

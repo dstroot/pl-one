@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home it should render 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "backgroundImage": "linear-gradient(to top, rgba(0, 142, 215, 0.9), rgba(0, 142, 215, 0.4)), url(https://www.pacificlife.com/content/dam/paclife/crp/images/brand/Brand_hero.jpg)",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+        "height": "40vw",
+        "minHeight": "325px",
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "bottom": "5vw",
+          "color": "white",
+          "position": "absolute",
+          "textAlign": "center",
+          "width": "100vw",
+        }
+      }
+    >
+      <img
+        alt="hero"
+        className="d-block-inline"
+        src="PacificLife_BrandIcon_White.png"
+      />
+      <p
+        style={
+          Object {
+            "fontSize": "calc(32px + 1.5vw + 0.5vmin)",
+            "fontWeight": "500",
+            "marginBottom": "0",
+          }
+        }
+      >
+        You. Protected.
+      </p>
+      <p
+        style={
+          Object {
+            "fontSize": "calc(8px + 1.5vw + 0.5vmin)",
+            "fontWeight": "300",
+            "marginBottom": "0",
+            "marginTop": "-0.5vw",
+          }
+        }
+      >
+        Our mission is protecting your financial future.
+      </p>
+      <p
+        style={
+          Object {
+            "fontSize": "calc(8px + 1.5vw + 0.5vmin)",
+            "fontWeight": "300",
+            "marginBottom": "0",
+            "marginTop": "-0.5vw",
+          }
+        }
+      >
+        We’ve fulfilled that promise for 150 years.
+      </p>
+    </div>
+  </div>,
+  <div
+    className="container mt-5 mb-5"
+  >
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col"
+      >
+        <div
+          className="text-center mx-auto"
+        >
+          <p
+            style={
+              Object {
+                "fontSize": "calc(26px + 1.5vw + 0.5vmin)",
+                "fontWeight": "300",
+                "lineHeight": "1.2",
+              }
+            }
+          >
+            PROTECTING WHAT MATTERS TO YOU MOST FOR MORE THAN 150 YEARS
+          </p>
+          <p
+            className="lead"
+          >
+            When it comes to life, no two people are the same. You're unique and so are your financial goals. For more than 150 years, generations of families and businesses have harnessed the Power of Pacific to help them achieve their unique goals. Explore how Pacific Life can help you.
+          </p>
+          <a
+            className="btn btn-primary"
+            href="https://www.pacificlife.com/home/life-goals.html"
+            target="_self"
+          >
+            We can help!
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container-fluid bg-primary text-center text-white"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-10 offset-1"
+      >
+        <p
+          className="pt-5"
+          style={
+            Object {
+              "fontSize": "calc(26px + 1.5vw + 0.5vmin)",
+              "fontWeight": "300",
+              "lineHeight": "1.2",
+            }
+          }
+        >
+          What the Power of Pacific Means for You
+        </p>
+        <div
+          className="card-group my-3"
+        >
+          <div
+            className="card bg-primary border-0"
+          >
+            <div
+              className="svg-container mx-auto"
+            >
+              <svg>
+                flag.svg
+              </svg>
+            </div>
+            <div
+              className="card-body"
+            >
+              <h3
+                className="card-title"
+              >
+                Freedom
+              </h3>
+              <p
+                className="card-text"
+              >
+                Life insurance and retirement solutions to help you reach your goals.
+              </p>
+            </div>
+          </div>
+          <div
+            className="card bg-primary border-0"
+          >
+            <div
+              className="svg-container mx-auto"
+            >
+              <svg>
+                locked.svg
+              </svg>
+            </div>
+            <div
+              className="card-body"
+            >
+              <h3
+                className="card-title"
+              >
+                Security
+              </h3>
+              <p
+                className="card-text"
+              >
+                A deep commitment to protecting generations of families.
+              </p>
+            </div>
+          </div>
+          <div
+            className="card bg-primary border-0"
+          >
+            <div
+              className="svg-container d-block mx-auto align-bottom"
+            >
+              <svg>
+                handshake.svg
+              </svg>
+            </div>
+            <div
+              className="card-body"
+            >
+              <h3
+                className="card-title"
+              >
+                Trust
+              </h3>
+              <p
+                className="card-text"
+              >
+                150 years of strength and stability by your side.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container mt-5"
+  >
+    <div
+      className="row align-items-center"
+    >
+      <div
+        className="col-md-6"
+      >
+        <h1
+          style={
+            Object {
+              "fontSize": "calc(24px + 1vw)",
+              "fontWeight": "300",
+              "marginBottom": "0",
+            }
+          }
+        >
+          CONFIDENCE IN YOUR FUTURE STARTS HERE
+        </h1>
+        <h3
+          className=""
+        >
+          Find a Financial Professional
+        </h3>
+        <form>
+          <div
+            className="form-row align-items-center"
+          >
+            <div
+              className="col-auto"
+            >
+              <input
+                aria-label="zip code"
+                className="form-control mb-2"
+                id="zip"
+                placeholder="enter zip code"
+                type="text"
+              />
+            </div>
+            <div
+              className="col-auto"
+            >
+              <button
+                className="btn btn-primary mb-2"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      className="row mt-3"
+    >
+      <div
+        className="col"
+      >
+        <p
+          className="text-muted small"
+        >
+          In order to sell life insurance, a financial professional must be a properly licensed and appointed life insurance producer.
+            
+          <span
+            className=""
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "fontWeight": "600",
+              }
+            }
+          >
+            [ 
+            More +
+             ]
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;

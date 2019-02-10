@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search it should render 1`] = `
+<div
+  className="container mt-5"
+>
+  <div
+    className="row align-items-center"
+  >
+    <div
+      className="col-md-6"
+    >
+      <h1
+        style={
+          Object {
+            "fontSize": "calc(24px + 1vw)",
+            "fontWeight": "300",
+            "marginBottom": "0",
+          }
+        }
+      >
+        CONFIDENCE IN YOUR FUTURE STARTS HERE
+      </h1>
+      <h3
+        className=""
+      >
+        Find a Financial Professional
+      </h3>
+      <form>
+        <div
+          className="form-row align-items-center"
+        >
+          <div
+            className="col-auto"
+          >
+            <input
+              aria-label="zip code"
+              className="form-control mb-2"
+              id="zip"
+              placeholder="enter zip code"
+              type="text"
+            />
+          </div>
+          <div
+            className="col-auto"
+          >
+            <button
+              className="btn btn-primary mb-2"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="row mt-3"
+  >
+    <div
+      className="col"
+    >
+      <p
+        className="text-muted small"
+      >
+        In order to sell life insurance, a financial professional must be a properly licensed and appointed life insurance producer.
+          
+        <span
+          className=""
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fontWeight": "600",
+            }
+          }
+        >
+          [ 
+          More +
+           ]
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;
