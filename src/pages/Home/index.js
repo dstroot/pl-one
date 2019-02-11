@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.scss";
 
 import HeroWash from "../../components/HeroWash";
@@ -8,6 +8,12 @@ import CardGroup from "../../components/CardGroup";
 import Search from "../../components/Search";
 
 const Home = () => {
+  // Set the page title and position using the useEffect hook
+  useEffect(() => {
+    document.title = `Pacific Life • Home`;
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <HeroWash

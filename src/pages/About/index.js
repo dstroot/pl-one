@@ -20,10 +20,10 @@ const About = () => {
   });
 
   return (
-    <>
+    <div className="mt-5 pt-3">
       <AboutUs />
       <Map styles={styles} APIKey={API_KEY} scheme="dark" />
-    </>
+    </div>
   );
 };
 

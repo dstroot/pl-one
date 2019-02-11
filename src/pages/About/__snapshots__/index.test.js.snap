@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About it should render 1`] = `
-Array [
+<div
+  className="mt-5 pt-3"
+>
   <div
     className="container"
   >
@@ -72,7 +74,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="bg-primary"
   >
@@ -98,7 +100,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="container"
   >
@@ -186,7 +188,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -202,6 +204,6 @@ Array [
         }
       }
     />
-  </div>,
-]
+  </div>
+</div>
 `;
