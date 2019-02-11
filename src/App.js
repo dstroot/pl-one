@@ -6,7 +6,7 @@ import "./scss/main.scss";
 // components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Routes from "./routes";
+import Routes from "./Routes";
 
 // pages
 import Home from "./pages/Home";
