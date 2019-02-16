@@ -1,6 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import { mount } from "enzyme";
+
 import News from "../News";
 
 describe("News", () => {
@@ -26,7 +27,6 @@ describe("News", () => {
     const h1 = getMountedComponent()
       .find("h1")
       .first();
-
     expect(h1.text()).toContain("News!");
   });
 });
