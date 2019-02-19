@@ -9,6 +9,7 @@ const fireResize = width => {
   window.innerWidth = width;
   window.dispatchEvent(new Event("resize"));
 };
+
 // Test component that uses the Hook
 const EffecfulComponent = () => {
   const result = useMediaQuery(`screen and (max-width: 400px)`);

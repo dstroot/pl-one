@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
 // styles
-import "./scss/main.scss";
+import './scss/main.scss';
 
 // components
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import Routes from "./Routes";
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import Routes from './Routes';
 
 // pages
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Home from './pages/Home';
+import About from './pages/About';
 
 const navData = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/about", name: "About", component: About }
+  { path: '/', name: 'Home', component: Home },
+  { path: '/about', name: 'About', component: About },
 ];
 
 const App = () => (
