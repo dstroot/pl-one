@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import "./styles.scss";
+import React, { useEffect } from 'react';
+import './styles.scss';
 
-import HeroWash from "../../components/HeroWash";
-import logo from "../../components/HeroWash/media/PacificLife_BrandIcon_White.png";
-import TextHero from "../../components/TextHero";
-import CardGroup from "../../components/CardGroup";
-import Search from "../../components/Search";
+import HeroWash from '../../components/HeroWash';
+import logo from '../../components/HeroWash/media/PacificLife_BrandIcon_White.png';
+import TextHero from '../../components/TextHero';
+import CardGroup from '../../components/CardGroup';
+import Search from '../../components/Search';
+import Chart from '../../components/Chart';
 
 const Home = () => {
   // Set the page title and position using the useEffect hook
@@ -29,6 +30,7 @@ const Home = () => {
         link="https://www.pacificlife.com/home/life-goals.html"
       />
       <CardGroup />
+      <Chart />
       <Search />
     </>
   );
