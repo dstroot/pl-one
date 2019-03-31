@@ -148,13 +148,11 @@ const chart = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container mt-5 mb-4">
       <div className="row">
         <div className="col-md-4">
           <h1 className="mb-0">Invest in Tomorrow</h1>
-          <p className="text-muted mt-0">
-            Use the sliders to see how much your money can grow.
-          </p>
+          <p className="text-muted mt-0">See how much your money can grow!</p>
           <h5>Initial Deposit</h5>
           <Slider
             min={500}
