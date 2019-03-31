@@ -22,12 +22,12 @@ describe('chart', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  it('it should say Invest in Tomorrow', () => {
+  it('it should say "Design Your Future"', () => {
     const h1 = getMountedComponent()
       .find('h1')
       .first();
 
-    expect(h1.text()).toContain('Invest in Tomorrow');
+    expect(h1.text()).toContain('Design Your Future');
   });
 });
 

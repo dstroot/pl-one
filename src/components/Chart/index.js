@@ -11,11 +11,12 @@ import 'rc-slider/assets/index.css';
 import './styles.scss';
 
 /**
+ * Resources:
+ *
  * https://stackblitz.com/edit/react-hketvd?file=index.js
  * https://github.com/highcharts/highcharts-react
  * https://github.com/react-component/slider
  * https://www.wealthsimple.com/en-us/
- *
  *
  */
 
@@ -95,22 +96,89 @@ const test = {
 };
 
 const chart = () => {
+  // calculate a logarithmic slider position from a value
+  const logPosInitial = value => {
+    // position will be between 0 and 100
+    var minp = 0;
+    var maxp = 100;
+
+    // The result should be between 500 and 1,000,000
+    var minv = Math.log(500);
+    var maxv = Math.log(1000000);
+
+    // calculate adjustment factor
+    var scale = (maxv - minv) / (maxp - minp);
+
+    return (Math.log(value) - minv) / scale + minp;
+  };
+
+  // need to make the slider logarithmic
+  // https://stackoverflow.com/questions/846221/logarithmic-slider
+  const logSlideInitial = position => {
+    // position will be between 0 and 100
+    var minp = 0;
+    var maxp = 100;
+
+    // The result should be between 500 and 1,000,000
+    var minv = Math.log(500);
+    var maxv = Math.log(1000000);
+
+    // calculate adjustment factor
+    var scale = (maxv - minv) / (maxp - minp);
+
+    return Math.exp(minv + scale * (position - minp));
+  };
+
+  // calculate a logarithmic slider position from a value
+  const logPosMonthly = value => {
+    // position will be between 0 and 100
+    var minp = 0;
+    var maxp = 100;
+
+    // The result should be between 25 and 25,000
+    var minv = Math.log(25);
+    var maxv = Math.log(25000);
+
+    // calculate adjustment factor
+    var scale = (maxv - minv) / (maxp - minp);
+
+    return (Math.log(value) - minv) / scale + minp;
+  };
+
+  // need to make the slider logarithmic
+  // https://stackoverflow.com/questions/846221/logarithmic-slider
+  const logSlideMonthy = position => {
+    // position will be between 0 and 100
+    var minp = 0;
+    var maxp = 100;
+
+    // The result should be between 25 and 25,000
+    var minv = Math.log(25);
+    var maxv = Math.log(25000);
+
+    // calculate adjustment factor
+    var scale = (maxv - minv) / (maxp - minp);
+
+    return Math.exp(minv + scale * (position - minp));
+  };
+
   const [initial, setInitial] = useState(50000);
   const [monthly, setMonthly] = useState(1000);
-  const [risk, setRisk] = useState(7);
+  const [risk, setRisk] = useState(6);
   const [riskDesc, setRiskDesc] = useState('Growth');
 
+  // currency formatter
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
 
   const changeInitial = value => {
-    setInitial(value);
+    setInitial(logSlideInitial(value));
   };
 
   const changeMonthly = value => {
-    setMonthly(value);
+    setMonthly(logSlideMonthy(value));
   };
 
   const changeRisk = value => {
@@ -151,22 +219,22 @@ const chart = () => {
     <div className="container mt-5 mb-4">
       <div className="row">
         <div className="col-md-4">
-          <h1 className="mb-0">Invest in Tomorrow</h1>
+          <h1 className="mb-0">Design Your Future</h1>
           <p className="text-muted mt-0">See how much your money can grow!</p>
           <h5>Initial Deposit</h5>
           <Slider
-            min={500}
-            max={1000000}
-            defaultValue={initial}
+            min={0}
+            max={100}
+            defaultValue={logPosInitial(50000)}
             onChange={changeInitial}
           />
           <h4>{formatter.format(initial).slice(0, -3)}</h4>
           <br />
           <h5>Monthly Deposit</h5>
           <Slider
-            min={25}
-            max={25000}
-            defaultValue={monthly}
+            min={0}
+            max={100}
+            defaultValue={logPosMonthly(1000)}
             // marks={marks} //marks={['25', '250', '2500', '25k']}
             // values={[25, 250, 2500, 25000]}
             onChange={changeMonthly}
