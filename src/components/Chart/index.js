@@ -251,41 +251,44 @@ const chart = () => {
         <div className="col-md-4">
           <h1 className="mb-0">Design Your Future</h1>
           <p className="text-muted mt-0">See how much your money can grow!</p>
-          <h4 className="text-primary">
-            <span className="small text-muted">Initial Deposit: </span>
-            {formatter.format(initial).slice(0, -3)}
-          </h4>
-          <Slider
-            min={0}
-            max={100}
-            defaultValue={logPosInitial(50000)}
-            onChange={changeInitial}
-          />
-          <br />
-          <h4 className="text-primary">
-            <span className="small text-muted">Monthly Deposit: </span>
-            {formatter.format(monthly).slice(0, -3)}
-          </h4>
-          <Slider
-            min={0}
-            max={100}
-            defaultValue={logPosMonthly(1000)}
-            onChange={changeMonthly}
-          />
-          <br />
-          <h4 className="text-primary">
-            <span className="small text-muted">Risk: </span>
-            {riskDesc}
-          </h4>
-          <SliderWithTooltip
-            dots
-            min={0}
-            max={10}
-            step={1}
-            defaultValue={risk}
-            onChange={changeRisk}
-          />
-          <br />
+          <div className="wrapper mt-5">
+            <h4 className="text-primary">
+              <span className="small text-muted">Initial Deposit: </span>
+              {formatter.format(initial).slice(0, -3)}
+            </h4>
+            <Slider
+              min={0}
+              max={100}
+              defaultValue={logPosInitial(50000)}
+              onChange={changeInitial}
+            />
+          </div>
+          <div className="wrapper mt-5">
+            <h4 className="text-primary">
+              <span className="small text-muted">Monthly Deposit: </span>
+              {formatter.format(monthly).slice(0, -3)}
+            </h4>
+            <Slider
+              min={0}
+              max={100}
+              defaultValue={logPosMonthly(1000)}
+              onChange={changeMonthly}
+            />
+          </div>
+          <div className="wrapper mt-5">
+            <h4 className="text-primary">
+              <span className="small text-muted">Risk Level: </span>
+              {riskDesc}
+            </h4>
+            <SliderWithTooltip
+              dots
+              min={0}
+              max={10}
+              step={1}
+              defaultValue={risk}
+              onChange={changeRisk}
+            />
+          </div>
         </div>
         <div className="col-md-8">
           <HighchartsReact highcharts={Highcharts} options={chartData} />
