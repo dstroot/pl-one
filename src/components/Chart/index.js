@@ -108,7 +108,29 @@ const chart = () => {
     // calculate adjustment factor
     var scale = (maxv - minv) / (maxp - minp);
 
-    return Math.exp(minv + scale * (position - minp));
+    // calculate result
+    let result = Math.exp(minv + scale * (position - minp));
+    // console.log('0: ' + result);
+
+    // round to nearest - but for a logarithmic scale!
+    if (result < 1000) {
+      result = Math.ceil(result / 500) * 500;
+      // console.log('1: ' + result);
+    }
+    if (result >= 1000 && result < 10000) {
+      result = Math.ceil(result / 1000) * 1000;
+      // console.log('4: ' + result);
+    }
+    if (result >= 10000 && result < 100000) {
+      result = Math.ceil(result / 10000) * 10000;
+      // console.log('5: ' + result);
+    }
+    if (result >= 100000 && result < 999999) {
+      result = Math.ceil(result / 100000) * 100000;
+      // console.log('5: ' + result);
+    }
+
+    return result;
   };
 
   // calculate a logarithmic slider position from a value
@@ -141,7 +163,33 @@ const chart = () => {
     // calculate adjustment factor
     var scale = (maxv - minv) / (maxp - minp);
 
-    return Math.exp(minv + scale * (position - minp));
+    // calculate result
+    let result = Math.exp(minv + scale * (position - minp));
+    // console.log('0: ' + result);
+
+    // round to nearest - but for a logarithmic scale!
+    if (result < 50) {
+      result = Math.ceil(result / 5) * 5;
+      // console.log('1: ' + result);
+    }
+    if (result >= 50 && result < 100) {
+      result = Math.ceil(result / 10) * 10;
+      // console.log('2: ' + result);
+    }
+    if (result >= 100 && result < 1000) {
+      result = Math.ceil(result / 100) * 100;
+      // console.log('3: ' + result);
+    }
+    if (result >= 1000 && result < 10000) {
+      result = Math.ceil(result / 1000) * 1000;
+      // console.log('4: ' + result);
+    }
+    if (result >= 10000 && result < 24999) {
+      result = Math.ceil(result / 5000) * 5000;
+      // console.log('5: ' + result);
+    }
+
+    return result;
   };
 
   const [initial, setInitial] = useState(50000);
