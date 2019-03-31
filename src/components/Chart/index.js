@@ -251,25 +251,32 @@ const chart = () => {
         <div className="col-md-4">
           <h1 className="mb-0">Design Your Future</h1>
           <p className="text-muted mt-0">See how much your money can grow!</p>
-          <h5>Initial Deposit</h5>
+          <h4 className="text-primary">
+            <span className="small text-muted">Initial Deposit: </span>
+            {formatter.format(initial).slice(0, -3)}
+          </h4>
           <Slider
             min={0}
             max={100}
             defaultValue={logPosInitial(50000)}
             onChange={changeInitial}
           />
-          <h4>{formatter.format(initial).slice(0, -3)}</h4>
           <br />
-          <h5>Monthly Deposit</h5>
+          <h4 className="text-primary">
+            <span className="small text-muted">Monthly Deposit: </span>
+            {formatter.format(monthly).slice(0, -3)}
+          </h4>
           <Slider
             min={0}
             max={100}
             defaultValue={logPosMonthly(1000)}
             onChange={changeMonthly}
           />
-          <h4>{formatter.format(monthly).slice(0, -3)}</h4>
           <br />
-          <h5>Risk Level</h5>
+          <h4 className="text-primary">
+            <span className="small text-muted">Risk: </span>
+            {riskDesc}
+          </h4>
           <SliderWithTooltip
             dots
             min={0}
@@ -278,7 +285,6 @@ const chart = () => {
             defaultValue={risk}
             onChange={changeRisk}
           />
-          <h4>{riskDesc}</h4>
           <br />
         </div>
         <div className="col-md-8">

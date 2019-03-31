@@ -229,9 +229,16 @@ Array [
         >
           See how much your money can grow!
         </p>
-        <h5>
-          Initial Deposit
-        </h5>
+        <h4
+          className="text-primary"
+        >
+          <span
+            className="small text-muted"
+          >
+            Initial Deposit: 
+          </span>
+          $50,000
+        </h4>
         <div
           className="rc-slider"
           onBlur={[Function]}
@@ -278,13 +285,17 @@ Array [
             className="rc-slider-mark"
           />
         </div>
-        <h4>
-          $50,000
-        </h4>
         <br />
-        <h5>
-          Monthly Deposit
-        </h5>
+        <h4
+          className="text-primary"
+        >
+          <span
+            className="small text-muted"
+          >
+            Monthly Deposit: 
+          </span>
+          $1,000
+        </h4>
         <div
           className="rc-slider"
           onBlur={[Function]}
@@ -331,13 +342,17 @@ Array [
             className="rc-slider-mark"
           />
         </div>
-        <h4>
-          $1,000
-        </h4>
         <br />
-        <h5>
-          Risk Level
-        </h5>
+        <h4
+          className="text-primary"
+        >
+          <span
+            className="small text-muted"
+          >
+            Risk: 
+          </span>
+          Growth
+        </h4>
         <div
           className="rc-slider"
           onBlur={[Function]}
@@ -475,9 +490,6 @@ Array [
             className="rc-slider-mark"
           />
         </div>
-        <h4>
-          Growth
-        </h4>
         <br />
       </div>
       <div
