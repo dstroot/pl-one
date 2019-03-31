@@ -14,6 +14,8 @@ import './styles.scss';
  * https://stackblitz.com/edit/react-hketvd?file=index.js
  * https://github.com/highcharts/highcharts-react
  * https://github.com/react-component/slider
+ * https://www.wealthsimple.com/en-us/
+ *
  *
  */
 
