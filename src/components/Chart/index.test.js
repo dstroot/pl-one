@@ -1,14 +1,14 @@
-import React from "react";
-import { create } from "react-test-renderer";
-import { mount } from "enzyme";
-import chart from "../chart";
+import React from 'react';
+import { create } from 'react-test-renderer';
+import { mount } from 'enzyme';
+import Chart from '../Chart';
 
-describe("chart", () => {
+describe('chart', () => {
   // mount the component
   let mountedComponent;
   const getMountedComponent = () => {
     if (!mountedComponent) {
-      mountedComponent = mount(<chart />);
+      mountedComponent = mount(<Chart />);
     }
     return mountedComponent;
   };
@@ -17,17 +17,17 @@ describe("chart", () => {
     mountedComponent = undefined;
   });
 
-  it("it should render", () => {
+  it('it should render', () => {
     let tree = create(<chart />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  it("it should say chart!", () => {
+  it('it should say Invest in Tomorrow', () => {
     const h1 = getMountedComponent()
-      .find("h1")
+      .find('h1')
       .first();
 
-    expect(h1.text()).toContain("chart!");
+    expect(h1.text()).toContain('Invest in Tomorrow');
   });
 });
 

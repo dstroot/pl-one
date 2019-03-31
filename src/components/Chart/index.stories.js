@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import chart from "../chart";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Chart from '../Chart';
 
-storiesOf("chart", module)
+storiesOf('Chart', module)
   .addParameters({
     info: {
       inline: true,
@@ -12,7 +12,7 @@ storiesOf("chart", module)
       ~~~js
       console.log("hello");
       ~~~
-      `
-    }
+      `,
+    },
   })
-  .add("show chart", () => <chart />);
+  .add('show chart', () => <Chart />);
