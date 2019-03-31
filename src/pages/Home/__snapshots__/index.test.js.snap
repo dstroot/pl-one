@@ -211,7 +211,7 @@ Array [
     </div>
   </div>,
   <div
-    className="container-fluid"
+    className="container mt-5 mb-4"
   >
     <div
       className="row"
@@ -227,7 +227,7 @@ Array [
         <p
           className="text-muted mt-0"
         >
-          Use the sliders to see how much your money can grow.
+          See how much your money can grow!
         </p>
         <h5>
           Initial Deposit
