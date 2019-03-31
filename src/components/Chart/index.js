@@ -22,31 +22,13 @@ import './styles.scss';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-// const marks = {
-//   '-10': '-10°C',
-//   0: <strong>0°C</strong>,
-//   26: '26°C',
-//   37: '37°C',
-//   50: '50°C',
-//   100: {
-//     style: {
-//       color: 'red',
-//     },
-//     label: <strong>100°C</strong>,
-//   },
-// };
-
-const test = {
+const chartData = {
   chart: {
     type: 'area',
   },
   title: {
-    // text: 'Historic and Estimated Worldwide Population Growth by Region',
     text: null,
   },
-  // subtitle: {
-  //   text: 'Source: Wikipedia.org',
-  // },
   xAxis: {
     categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
     tickmarkPlacement: 'on',
@@ -235,8 +217,6 @@ const chart = () => {
             min={0}
             max={100}
             defaultValue={logPosMonthly(1000)}
-            // marks={marks} //marks={['25', '250', '2500', '25k']}
-            // values={[25, 250, 2500, 25000]}
             onChange={changeMonthly}
           />
           <h4>{formatter.format(monthly).slice(0, -3)}</h4>
@@ -254,7 +234,7 @@ const chart = () => {
           <br />
         </div>
         <div className="col-md-8">
-          <HighchartsReact highcharts={Highcharts} options={test} />
+          <HighchartsReact highcharts={Highcharts} options={chartData} />
         </div>
       </div>
     </div>
