@@ -31,6 +31,32 @@ describe('chart', () => {
   });
 });
 
+// describe('futureValue', () => {
+//   let testData = [
+//     {
+//       test: 1,
+//       rate: 0.05,
+//       nper: 12,
+//       pmt: 1000,
+//       pv: 0,
+//       type: 0,
+//       expected: 12.0,
+//     },
+//   ];
+
+//   it('it should render', () => {
+//     // for each case
+//     let result = futureValue(
+//       test[i].rate,
+//       test[i].nper,
+//       test[i].pmt,
+//       test[i].pv,
+//       test[i].type
+//     );
+//     expect(result === test[i].expected);
+//   });
+// });
+
 // Testing information
 // ---------------------------------------------------
 // Jest - Expect: https://jestjs.io/docs/en/expect

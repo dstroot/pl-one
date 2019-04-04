@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
-
-// highcharts
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
+import React, { useState, useEffect } from 'react';
 
 // slider
 import Slider, { createSliderWithTooltip } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
+// recharts
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  tickFormatter,
+} from 'recharts';
+
+import { ReactComponent as Savings } from './media/saving3.svg';
 import './styles.scss';
 
 /**
@@ -22,60 +31,23 @@ import './styles.scss';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-const chartData = {
-  chart: {
-    type: 'area',
-  },
-  title: {
-    text: null,
-  },
-  xAxis: {
-    categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
-    tickmarkPlacement: 'on',
-    title: {
-      enabled: false,
-    },
-  },
-  yAxis: {
-    title: {
-      text: 'Billions',
-    },
-    labels: {
-      formatter: function() {
-        return this.value / 1000;
-      },
-    },
-  },
-  tooltip: {
-    split: true,
-    valueSuffix: ' millions',
-  },
-  plotOptions: {
-    area: {
-      stacking: 'normal',
-      lineColor: '#666666',
-      lineWidth: 1,
-      marker: {
-        lineWidth: 1,
-        lineColor: '#666666',
-      },
-    },
-  },
-  series: [
-    {
-      name: 'Pacific Life',
-      data: [502, 635, 809, 947, 1402, 3634, 5268],
-    },
-    {
-      name: 'Traditional Investing',
-      data: [163, 203, 276, 408, 547, 729, 628],
-    },
-    {
-      name: 'Traditional Savings',
-      data: [18, 31, 54, 156, 339, 818, 1201],
-    },
-  ],
-};
+// This function calculates future value.  The rate will be based on the risk level,
+// the number of periods (nper) will be "x"*12 because we will calculate a value
+// for each year.  The payment (pmt) will be the monthly deposit amount and the
+// present value (pv) will be the initial deposit. This matches the MSFT excel fv
+// calculation
+function futureValue(rate, nper, pmt, pv, type) {
+  let pow = Math.pow(1 + rate, nper),
+    fv;
+
+  if (rate) {
+    fv = (pmt * (1 + rate * type) * (1 - pow)) / rate - pv * pow;
+  } else {
+    fv = -1 * (pv + pmt * nper);
+  }
+
+  return fv.toFixed(2);
+}
 
 const chart = () => {
   // calculate a logarithmic slider position from a value
@@ -196,6 +168,7 @@ const chart = () => {
   const [monthly, setMonthly] = useState(1000);
   const [risk, setRisk] = useState(6);
   const [riskDesc, setRiskDesc] = useState('Growth');
+  const [data, setData] = useState([]);
 
   // currency formatter
   const formatter = new Intl.NumberFormat('en-US', {
@@ -203,8 +176,74 @@ const chart = () => {
     currency: 'USD',
   });
 
+  // create data for our graph
+  function createGraphData(initialDeposit, monthlyDeposit, riskLevel) {
+    // This function creates graph data.  It takes inputs from the sliders.
+
+    const type = 0; // When payments are due. 0 = end of period, 1 = beginning of period.
+    const data = []; // this is the array we will return
+
+    // table to define rates to use by risk level
+    var rates = [
+      { risk: 1, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 2, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 3, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 4, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 5, savings: 0.028, investment: 0.045, annuity: 0.049 },
+      { risk: 6, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 7, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 8, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 9, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 10, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+    ];
+
+    // we need to turn "risk level" into return expectations. Risk level can vary between 1 and 10.
+    // Risk 1 might be equal to treasuries (e.g. about 2.5-3%) and each tick up might add .25% or so.
+    // For the savings rate we might assume a constant rate over time regardless of risk.  CD rates
+    // are about 2.8% right now.
+    var oRate = rates.filter(function(rate) {
+      return rate.risk === riskLevel;
+    });
+
+    // create 30 years of data
+    for (let x = 0; x <= 30; x++) {
+      // calculate the fv for each year
+      let savings = -futureValue(
+        oRate[0].savings / 12,
+        x * 12,
+        monthlyDeposit,
+        initialDeposit,
+        type
+      );
+
+      let investment = -futureValue(
+        oRate[0].investment / 12,
+        x * 12,
+        monthlyDeposit,
+        initialDeposit,
+        type
+      );
+
+      let annuity = -futureValue(
+        oRate[0].annuity / 12,
+        x * 12,
+        monthlyDeposit,
+        initialDeposit,
+        type
+      );
+
+      let delta1 = investment - savings;
+      let delta2 = annuity - investment;
+
+      data.push({ x, savings, delta1, delta2 });
+    }
+
+    return data;
+  }
+
   const changeInitial = value => {
     setInitial(logSlideInitial(value));
+    setData(createGraphData(initial, monthly, risk));
   };
 
   const changeMonthly = value => {
@@ -248,8 +287,11 @@ const chart = () => {
   return (
     <div className="container mt-5 mb-4">
       <div className="row">
-        <div className="col-md-4">
-          <h1 className="mb-0">Design Your Future</h1>
+        <div className="col-md-6">
+          <Savings height={400} />
+        </div>
+        <div className="col-md-6">
+          <h1 className="display-4 mb-0">Design Your Future</h1>
           <p className="text-muted mt-0">See how much your money can grow!</p>
           <div className="wrapper mt-5">
             <h4 className="text-primary">
@@ -290,8 +332,52 @@ const chart = () => {
             />
           </div>
         </div>
-        <div className="col-md-8">
-          <HighchartsReact highcharts={Highcharts} options={chartData} />
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <div
+            style={{
+              width: '100%',
+              height: '500px',
+            }}
+          >
+            <ResponsiveContainer>
+              <AreaChart
+                data={data}
+                margin={{ top: 0, right: 0, left: 30, bottom: 0 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                {/* <XAxis />
+            <YAxis
+              tickFormatter={value => formatter.format(value).slice(0, -3)}
+            /> */}
+                <Tooltip
+                  formatter={value => formatter.format(value).slice(0, -3)}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="savings"
+                  stackId="1"
+                  stroke="#CCE1F1"
+                  fill="#CCE1F1"
+                />
+                <Area
+                  type="monotone"
+                  dataKey="delta1"
+                  stackId="1"
+                  stroke="#3F92C8"
+                  fill="#3F92C8"
+                />
+                <Area
+                  type="monotone"
+                  dataKey="delta2"
+                  stackId="1"
+                  stroke="#007DBD"
+                  fill="#007DBD"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </div>
