@@ -288,12 +288,14 @@ const chart = () => {
     <div className="container mt-5 mb-4">
       <div className="row">
         <div className="col-md-6">
-          <Savings height={400} />
+          <Savings height={300} />
         </div>
         <div className="col-md-6">
           <h1 className="display-4 mb-0">Design Your Future</h1>
-          <p className="text-muted mt-0">See how much your money can grow!</p>
-          <div className="wrapper mt-5">
+          <p className="lead text-muted mt-0">
+            See how much your money can grow!
+          </p>
+          <div className="wrapper mt-4">
             <h4 className="text-primary">
               <span className="small text-muted">Initial Deposit: </span>
               {formatter.format(initial).slice(0, -3)}
@@ -305,7 +307,7 @@ const chart = () => {
               onChange={changeInitial}
             />
           </div>
-          <div className="wrapper mt-5">
+          <div className="wrapper mt-4">
             <h4 className="text-primary">
               <span className="small text-muted">Monthly Deposit: </span>
               {formatter.format(monthly).slice(0, -3)}
@@ -317,7 +319,7 @@ const chart = () => {
               onChange={changeMonthly}
             />
           </div>
-          <div className="wrapper mt-5">
+          <div className="wrapper mt-4">
             <h4 className="text-primary">
               <span className="small text-muted">Risk Level: </span>
               {riskDesc}
@@ -338,7 +340,7 @@ const chart = () => {
           <div
             style={{
               width: '100%',
-              height: '500px',
+              height: '400px',
             }}
           >
             <ResponsiveContainer>
