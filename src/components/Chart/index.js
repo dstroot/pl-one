@@ -8,12 +8,12 @@ import 'rc-slider/assets/index.css';
 import {
   AreaChart,
   Area,
-  XAxis,
+  // XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  tickFormatter,
+  // tickFormatter,
 } from 'recharts';
 
 import { ReactComponent as Savings } from './media/saving3.svg';
@@ -37,8 +37,8 @@ const SliderWithTooltip = createSliderWithTooltip(Slider);
 // present value (pv) will be the initial deposit. This matches the MSFT excel fv
 // calculation
 function futureValue(rate, nper, pmt, pv, type) {
-  let pow = Math.pow(1 + rate, nper),
-    fv;
+  let pow = Math.pow(1 + rate, nper);
+  let fv = 0;
 
   if (rate) {
     fv = (pmt * (1 + rate * type) * (1 - pow)) / rate - pv * pow;
@@ -54,7 +54,7 @@ const chart = () => {
   const logPosInitial = value => {
     // position will be between 0 and 100
     var minp = 0;
-    var maxp = 100;
+    var maxp = 99;
 
     // The result should be between 500 and 1,000,000
     var minv = Math.log(500);
@@ -71,7 +71,7 @@ const chart = () => {
   const logSlideInitial = position => {
     // position will be between 0 and 100
     var minp = 0;
-    var maxp = 100;
+    var maxp = 99;
 
     // The result should be between 500 and 1,000,000
     var minv = Math.log(500);
@@ -109,7 +109,7 @@ const chart = () => {
   const logPosMonthly = value => {
     // position will be between 0 and 100
     var minp = 0;
-    var maxp = 100;
+    var maxp = 99;
 
     // The result should be between 25 and 25,000
     var minv = Math.log(25);
@@ -126,7 +126,7 @@ const chart = () => {
   const logSlideMonthy = position => {
     // position will be between 0 and 100
     var minp = 0;
-    var maxp = 100;
+    var maxp = 99;
 
     // The result should be between 25 and 25,000
     var minv = Math.log(25);
@@ -170,35 +170,37 @@ const chart = () => {
   const [riskDesc, setRiskDesc] = useState('Growth');
   const [data, setData] = useState([]);
 
+  useEffect(() => {
+    setData(createGraphData(initial, monthly, risk));
+  }, [initial, monthly, risk]);
+
   // currency formatter
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
 
-  // create data for our graph
+  // This function creates graph data.  It takes inputs from the sliders.
   function createGraphData(initialDeposit, monthlyDeposit, riskLevel) {
-    // This function creates graph data.  It takes inputs from the sliders.
-
-    const type = 0; // When payments are due. 0 = end of period, 1 = beginning of period.
-    const data = []; // this is the array we will return
+    const type = 0; // When payments are due: 0 = end of period, 1 = beginning of period.
+    const data = []; // The array we will return
 
     // table to define rates to use by risk level
     var rates = [
-      { risk: 1, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 2, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 3, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 4, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 5, savings: 0.028, investment: 0.045, annuity: 0.049 },
-      { risk: 6, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 7, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 8, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 9, savings: 0.028, investment: 0.03, annuity: 0.0325 },
-      { risk: 10, savings: 0.028, investment: 0.03, annuity: 0.0325 },
+      { risk: 0, savings: 0.028, investment: 0.03, annuity: 0.03225 },
+      { risk: 1, savings: 0.028, investment: 0.0325, annuity: 0.03475 },
+      { risk: 2, savings: 0.028, investment: 0.035, annuity: 0.03725 },
+      { risk: 3, savings: 0.028, investment: 0.0375, annuity: 0.03975 },
+      { risk: 4, savings: 0.028, investment: 0.04, annuity: 0.04225 },
+      { risk: 5, savings: 0.028, investment: 0.0425, annuity: 0.04475 },
+      { risk: 6, savings: 0.028, investment: 0.045, annuity: 0.04725 },
+      { risk: 7, savings: 0.028, investment: 0.0475, annuity: 0.04975 },
+      { risk: 8, savings: 0.028, investment: 0.05, annuity: 0.05225 },
+      { risk: 9, savings: 0.028, investment: 0.0525, annuity: 0.05475 },
     ];
 
-    // we need to turn "risk level" into return expectations. Risk level can vary between 1 and 10.
-    // Risk 1 might be equal to treasuries (e.g. about 2.5-3%) and each tick up might add .25% or so.
+    // we need to turn "risk level" into return expectations. Risk level can vary between 0 and 9.
+    // Risk 0 might be equal to treasuries (e.g. about 2.5-3%) and each tick up might add .25% or so.
     // For the savings rate we might assume a constant rate over time regardless of risk.  CD rates
     // are about 2.8% right now.
     var oRate = rates.filter(function(rate) {
@@ -243,7 +245,6 @@ const chart = () => {
 
   const changeInitial = value => {
     setInitial(logSlideInitial(value));
-    setData(createGraphData(initial, monthly, risk));
   };
 
   const changeMonthly = value => {
@@ -274,7 +275,6 @@ const chart = () => {
         break;
 
       case 9:
-      case 10:
         setRiskDesc('Aggressive');
         break;
 
@@ -300,7 +300,7 @@ const chart = () => {
             </h4>
             <Slider
               min={0}
-              max={100}
+              max={99}
               defaultValue={logPosInitial(50000)}
               onChange={changeInitial}
             />
@@ -312,7 +312,7 @@ const chart = () => {
             </h4>
             <Slider
               min={0}
-              max={100}
+              max={99}
               defaultValue={logPosMonthly(1000)}
               onChange={changeMonthly}
             />
@@ -325,7 +325,7 @@ const chart = () => {
             <SliderWithTooltip
               dots
               min={0}
-              max={10}
+              max={9}
               step={1}
               defaultValue={risk}
               onChange={changeRisk}
@@ -377,6 +377,10 @@ const chart = () => {
                 />
               </AreaChart>
             </ResponsiveContainer>
+            <div class="d-flex justify-content-between mb-3 text-muted">
+              <div class="p-2 font-weight-bold ml-5">Today</div>
+              <div class="p-2 font-weight-bold">30 Years</div>
+            </div>
           </div>
         </div>
       </div>
