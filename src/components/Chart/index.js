@@ -333,7 +333,7 @@ const chart = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-md-12">
           <div
             style={{
@@ -344,13 +344,13 @@ const chart = () => {
             <ResponsiveContainer>
               <AreaChart
                 data={data}
-                margin={{ top: 0, right: 0, left: 30, bottom: 0 }}
+                margin={{ top: 0, right: 0, left: 45, bottom: 0 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                {/* <XAxis />
-            <YAxis
-              tickFormatter={value => formatter.format(value).slice(0, -3)}
-            /> */}
+                {/* <XAxis /> */}
+                <YAxis
+                  tickFormatter={value => formatter.format(value).slice(0, -3)}
+                />
                 <Tooltip
                   formatter={value => formatter.format(value).slice(0, -3)}
                 />
