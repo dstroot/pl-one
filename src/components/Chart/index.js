@@ -377,9 +377,9 @@ const chart = () => {
                 />
               </AreaChart>
             </ResponsiveContainer>
-            <div class="d-flex justify-content-between mb-3 text-muted">
-              <div class="p-2 font-weight-bold ml-5">Today</div>
-              <div class="p-2 font-weight-bold">30 Years</div>
+            <div className="d-flex justify-content-between mb-3 text-muted">
+              <div className="p-2 font-weight-bold ml-5">Today</div>
+              <div className="p-2 font-weight-bold">30 Years</div>
             </div>
           </div>
         </div>

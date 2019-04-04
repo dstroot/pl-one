@@ -29,6 +29,13 @@ window.scrollTo = jest.fn().mockImplementation(() => {
   };
 });
 
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn(),
+};
+global.localStorage = localStorageMock;
+
 // https://medium.com/@stipsan/testing-with-jest-15-awesome-tips-and-tricks-42150ec4c262
 
 // eslint-disable-next-line no-console
