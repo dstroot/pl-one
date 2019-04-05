@@ -30,18 +30,24 @@ exports[`chart it should render 1`] = `
         See how much your money can grow!
       </p>
       <div
-        className="wrapper mt-4"
+        className="mt-4"
       >
-        <h4
-          className="text-primary"
+        <div
+          className="d-flex justify-content-between"
         >
-          <span
-            className="small text-muted"
+          <div
+            className="text-muted"
           >
-            Initial Deposit: 
-          </span>
-          $50,000
-        </h4>
+            Initial Deposit
+          </div>
+          <div>
+            <h4
+              className="text-primary"
+            >
+              $50,000
+            </h4>
+          </div>
+        </div>
         <div
           className="rc-slider"
           onBlur={[Function]}
@@ -90,18 +96,24 @@ exports[`chart it should render 1`] = `
         </div>
       </div>
       <div
-        className="wrapper mt-4"
+        className="mt-4"
       >
-        <h4
-          className="text-primary"
+        <div
+          className="d-flex justify-content-between"
         >
-          <span
-            className="small text-muted"
+          <div
+            className="text-muted"
           >
-            Monthly Deposit: 
-          </span>
-          $1,000
-        </h4>
+            Monthly Deposit
+          </div>
+          <div>
+            <h4
+              className="text-primary"
+            >
+              $1,000
+            </h4>
+          </div>
+        </div>
         <div
           className="rc-slider"
           onBlur={[Function]}
@@ -150,18 +162,24 @@ exports[`chart it should render 1`] = `
         </div>
       </div>
       <div
-        className="wrapper mt-4"
+        className="mt-4"
       >
-        <h4
-          className="text-primary"
+        <div
+          className="d-flex justify-content-between"
         >
-          <span
-            className="small text-muted"
+          <div
+            className="text-muted"
           >
-            Risk Level: 
-          </span>
-          Growth
-        </h4>
+            Risk Level
+          </div>
+          <div>
+            <h4
+              className="text-primary"
+            >
+              Growth
+            </h4>
+          </div>
+        </div>
         <div
           className="rc-slider"
           onBlur={[Function]}
@@ -180,7 +198,7 @@ exports[`chart it should render 1`] = `
             style={
               Object {
                 "left": "0%",
-                "width": "66.66666666666666%",
+                "width": "44.44444444444444%",
               }
             }
           />
@@ -228,7 +246,7 @@ exports[`chart it should render 1`] = `
               }
             />
             <span
-              className="rc-slider-dot rc-slider-dot-active"
+              className="rc-slider-dot"
               style={
                 Object {
                   "left": "55.55555555555556%",
@@ -236,7 +254,7 @@ exports[`chart it should render 1`] = `
               }
             />
             <span
-              className="rc-slider-dot rc-slider-dot-active"
+              className="rc-slider-dot"
               style={
                 Object {
                   "left": "66.66666666666666%",
@@ -272,7 +290,7 @@ exports[`chart it should render 1`] = `
             aria-disabled={false}
             aria-valuemax={9}
             aria-valuemin={0}
-            aria-valuenow={6}
+            aria-valuenow={4}
             className="rc-slider-handle"
             onBlur={[Function]}
             onKeyDown={[Function]}
@@ -282,7 +300,7 @@ exports[`chart it should render 1`] = `
             role="slider"
             style={
               Object {
-                "left": "66.66666666666666%",
+                "left": "44.44444444444444%",
               }
             }
             tabIndex={0}
