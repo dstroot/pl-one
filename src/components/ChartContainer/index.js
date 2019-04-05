@@ -11,6 +11,14 @@ import Chart from '../Chart';
 import { ReactComponent as Savings } from './media/saving3.svg';
 import './styles.scss';
 
+const textBig = {
+  fontSize: `calc(36px + 1vw)`,
+  marginBottom: "0",
+  marginTop: "30",
+  fontWeight: "300"
+};
+
+
 /**
  * Resources:
  *
@@ -269,12 +277,12 @@ const ChartContainer = () => {
     <div className="container mt-5 mb-4">
       <div className="row">
         <div className="col-md-6">
-          <Savings height={300} />
+          <Savings className="d-block w-100" height={300} />
         </div>
-        <div className="col-md-6">
-          <h1 className="display-4 mb-0">Design Your Future</h1>
+        <div className="col-md-6 text-center">
+          <h1 style={textBig}>Design Your Future</h1>
           <p className="lead text-muted mt-0">
-            See how much your money can grow!
+            See how fast your money can grow!
           </p>
           <div className="mt-4">
             <div className="d-flex justify-content-between">

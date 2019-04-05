@@ -220,23 +220,31 @@ Array [
         className="col-md-6"
       >
         <svg
+          className="d-block w-100"
           height={300}
         >
           saving3.svg
         </svg>
       </div>
       <div
-        className="col-md-6"
+        className="col-md-6 text-center"
       >
         <h1
-          className="display-4 mb-0"
+          style={
+            Object {
+              "fontSize": "calc(36px + 1vw)",
+              "fontWeight": "300",
+              "marginBottom": "0",
+              "marginTop": "30",
+            }
+          }
         >
           Design Your Future
         </h1>
         <p
           className="lead text-muted mt-0"
         >
-          See how much your money can grow!
+          See how fast your money can grow!
         </p>
         <div
           className="mt-4"
