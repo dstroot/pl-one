@@ -217,20 +217,29 @@ Array [
       className="row"
     >
       <div
-        className="col-md-4"
+        className="col-md-6"
+      >
+        <svg
+          height={300}
+        >
+          saving3.svg
+        </svg>
+      </div>
+      <div
+        className="col-md-6"
       >
         <h1
-          className="mb-0"
+          className="display-4 mb-0"
         >
           Design Your Future
         </h1>
         <p
-          className="text-muted mt-0"
+          className="lead text-muted mt-0"
         >
           See how much your money can grow!
         </p>
         <div
-          className="wrapper mt-5"
+          className="wrapper mt-4"
         >
           <h4
             className="text-primary"
@@ -260,7 +269,7 @@ Array [
               style={
                 Object {
                   "left": "0%",
-                  "width": "61%",
+                  "width": "60.60606060606061%",
                 }
               }
             />
@@ -269,9 +278,9 @@ Array [
             />
             <div
               aria-disabled={false}
-              aria-valuemax={100}
+              aria-valuemax={99}
               aria-valuemin={0}
-              aria-valuenow={61}
+              aria-valuenow={60}
               className="rc-slider-handle"
               onBlur={[Function]}
               onKeyDown={[Function]}
@@ -279,7 +288,7 @@ Array [
               role="slider"
               style={
                 Object {
-                  "left": "61%",
+                  "left": "60.60606060606061%",
                 }
               }
               tabIndex={0}
@@ -290,7 +299,7 @@ Array [
           </div>
         </div>
         <div
-          className="wrapper mt-5"
+          className="wrapper mt-4"
         >
           <h4
             className="text-primary"
@@ -320,7 +329,7 @@ Array [
               style={
                 Object {
                   "left": "0%",
-                  "width": "53%",
+                  "width": "53.535353535353536%",
                 }
               }
             />
@@ -329,7 +338,7 @@ Array [
             />
             <div
               aria-disabled={false}
-              aria-valuemax={100}
+              aria-valuemax={99}
               aria-valuemin={0}
               aria-valuenow={53}
               className="rc-slider-handle"
@@ -339,7 +348,7 @@ Array [
               role="slider"
               style={
                 Object {
-                  "left": "53%",
+                  "left": "53.535353535353536%",
                 }
               }
               tabIndex={0}
@@ -350,7 +359,7 @@ Array [
           </div>
         </div>
         <div
-          className="wrapper mt-5"
+          className="wrapper mt-4"
         >
           <h4
             className="text-primary"
@@ -380,7 +389,7 @@ Array [
               style={
                 Object {
                   "left": "0%",
-                  "width": "60%",
+                  "width": "66.66666666666666%",
                 }
               }
             />
@@ -399,7 +408,7 @@ Array [
                 className="rc-slider-dot rc-slider-dot-active"
                 style={
                   Object {
-                    "left": "10%",
+                    "left": "11.11111111111111%",
                   }
                 }
               />
@@ -407,7 +416,7 @@ Array [
                 className="rc-slider-dot rc-slider-dot-active"
                 style={
                   Object {
-                    "left": "20%",
+                    "left": "22.22222222222222%",
                   }
                 }
               />
@@ -415,7 +424,7 @@ Array [
                 className="rc-slider-dot rc-slider-dot-active"
                 style={
                   Object {
-                    "left": "30%",
+                    "left": "33.33333333333333%",
                   }
                 }
               />
@@ -423,7 +432,7 @@ Array [
                 className="rc-slider-dot rc-slider-dot-active"
                 style={
                   Object {
-                    "left": "40%",
+                    "left": "44.44444444444444%",
                   }
                 }
               />
@@ -431,7 +440,7 @@ Array [
                 className="rc-slider-dot rc-slider-dot-active"
                 style={
                   Object {
-                    "left": "50%",
+                    "left": "55.55555555555556%",
                   }
                 }
               />
@@ -439,7 +448,7 @@ Array [
                 className="rc-slider-dot rc-slider-dot-active"
                 style={
                   Object {
-                    "left": "60%",
+                    "left": "66.66666666666666%",
                   }
                 }
               />
@@ -447,7 +456,7 @@ Array [
                 className="rc-slider-dot"
                 style={
                   Object {
-                    "left": "70%",
+                    "left": "77.77777777777779%",
                   }
                 }
               />
@@ -455,15 +464,7 @@ Array [
                 className="rc-slider-dot"
                 style={
                   Object {
-                    "left": "80%",
-                  }
-                }
-              />
-              <span
-                className="rc-slider-dot"
-                style={
-                  Object {
-                    "left": "90%",
+                    "left": "88.88888888888889%",
                   }
                 }
               />
@@ -478,7 +479,7 @@ Array [
             </div>
             <div
               aria-disabled={false}
-              aria-valuemax={10}
+              aria-valuemax={9}
               aria-valuemin={0}
               aria-valuenow={6}
               className="rc-slider-handle"
@@ -490,7 +491,7 @@ Array [
               role="slider"
               style={
                 Object {
-                  "left": "60%",
+                  "left": "66.66666666666666%",
                 }
               }
               tabIndex={0}
@@ -501,10 +502,51 @@ Array [
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="row mt-3"
+    >
       <div
-        className="col-md-8"
+        className="col-md-12"
       >
-        <div />
+        <div
+          className="recharts-responsive-container"
+          style={
+            Object {
+              "height": 400,
+              "maxHeight": undefined,
+              "minHeight": undefined,
+              "minWidth": undefined,
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "display": "none",
+                "height": 0,
+                "position": "absolute",
+                "visibility": "hidden",
+                "width": 0,
+              }
+            }
+          />
+        </div>
+        <div
+          className="d-flex justify-content-between mb-3 text-muted"
+        >
+          <div
+            className="p-2 font-weight-bold ml-5"
+          >
+            Today
+          </div>
+          <div
+            className="p-2 font-weight-bold"
+          >
+            30 Years
+          </div>
+        </div>
       </div>
     </div>
   </div>,

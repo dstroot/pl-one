@@ -6,7 +6,7 @@ import logo from '../../components/HeroWash/media/PacificLife_BrandIcon_White.pn
 import TextHero from '../../components/TextHero';
 import CardGroup from '../../components/CardGroup';
 import Search from '../../components/Search';
-import Chart from '../../components/Chart';
+import ChartContainer from '../../components/ChartContainer';
 
 const Home = () => {
   // Set the page title and position using the useEffect hook
@@ -30,7 +30,7 @@ const Home = () => {
         link="https://www.pacificlife.com/home/life-goals.html"
       />
       <CardGroup />
-      <Chart />
+      <ChartContainer />
       <Search />
     </>
   );
