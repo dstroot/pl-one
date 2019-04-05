@@ -147,7 +147,7 @@ const ChartContainer = () => {
 
   const [initial, setInitial] = useState(50000);
   const [monthly, setMonthly] = useState(1000);
-  const [risk, setRisk] = useState(6);
+  const [risk, setRisk] = useState(4);
   const [riskDesc, setRiskDesc] = useState('Growth');
   const [data, setData] = useState([]);
 
@@ -276,11 +276,15 @@ const ChartContainer = () => {
           <p className="lead text-muted mt-0">
             See how much your money can grow!
           </p>
-          <div className="wrapper mt-4">
-            <h4 className="text-primary">
-              <span className="small text-muted">Initial Deposit: </span>
-              {formatter.format(initial).slice(0, -3)}
-            </h4>
+          <div className="mt-4">
+            <div className="d-flex justify-content-between">
+              <div className="text-muted">Initial Deposit</div>
+              <div>
+                <h4 className="text-primary">
+                  {formatter.format(initial).slice(0, -3)}
+                </h4>
+              </div>
+            </div>
             <Slider
               min={0}
               max={99}
@@ -288,11 +292,15 @@ const ChartContainer = () => {
               onChange={changeInitial}
             />
           </div>
-          <div className="wrapper mt-4">
-            <h4 className="text-primary">
-              <span className="small text-muted">Monthly Deposit: </span>
-              {formatter.format(monthly).slice(0, -3)}
-            </h4>
+          <div className="mt-4">
+            <div className="d-flex justify-content-between">
+              <div className="text-muted">Monthly Deposit</div>
+              <div>
+                <h4 className="text-primary">
+                  {formatter.format(monthly).slice(0, -3)}
+                </h4>
+              </div>
+            </div>
             <Slider
               min={0}
               max={99}
@@ -300,11 +308,13 @@ const ChartContainer = () => {
               onChange={changeMonthly}
             />
           </div>
-          <div className="wrapper mt-4">
-            <h4 className="text-primary">
-              <span className="small text-muted">Risk Level: </span>
-              {riskDesc}
-            </h4>
+          <div className="mt-4">
+            <div className="d-flex justify-content-between">
+              <div className="text-muted">Risk Level</div>
+              <div>
+                <h4 className="text-primary">{riskDesc}</h4>
+              </div>
+            </div>
             <SliderWithTooltip
               dots
               min={0}
