@@ -13,29 +13,15 @@ import './styles.scss';
 
 const textBig = {
   fontSize: `calc(36px + 1vw)`,
-  marginBottom: "0",
-  marginTop: "30",
-  fontWeight: "300"
+  marginBottom: '0',
+  marginTop: '30',
+  fontWeight: '300',
 };
-
-
-/**
- * Resources:
- *
- * https://stackblitz.com/edit/react-hketvd?file=index.js
- * https://github.com/highcharts/highcharts-react
- * https://github.com/react-component/slider
- * https://www.wealthsimple.com/en-us/
- *
- */
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-// This function calculates future value.  The rate will be based on the risk level,
-// the number of periods (nper) will be "x"*12 because we will calculate a value
-// for each year.  The payment (pmt) will be the monthly deposit amount and the
-// present value (pv) will be the initial deposit. This matches the MSFT excel fv
-// calculation
+// This function calculates future value.  This function matches the
+// MSFT Excel fv calculation.
 function futureValue(rate, nper, pmt, pv, type) {
   let pow = Math.pow(1 + rate, nper);
   let fv = 0;
@@ -172,7 +158,7 @@ const ChartContainer = () => {
   // This function creates graph data.  It takes inputs from the sliders.
   function createGraphData(initialDeposit, monthlyDeposit, riskLevel) {
     const type = 0; // When payments are due: 0 = end of period, 1 = beginning of period.
-    const data = []; // The array we will return
+    const data = []; // Array of data we will return
 
     // table to define rates to use by risk level
     var rates = [
@@ -192,32 +178,32 @@ const ChartContainer = () => {
     // Risk 0 might be equal to treasuries (e.g. about 2.5-3%) and each tick up might add .25% or so.
     // For the savings rate we might assume a constant rate over time regardless of risk.  CD rates
     // are about 2.8% right now.
-    var oRate = rates.filter(function(rate) {
+    var filteredRates = rates.filter(function(rate) {
       return rate.risk === riskLevel;
     });
 
     // create 30 years of data
-    for (let x = 0; x <= 30; x++) {
+    for (let year = 0; year <= 30; year++) {
       // calculate the fv for each year
       let savings = -futureValue(
-        oRate[0].savings / 12,
-        x * 12,
+        filteredRates[0].savings / 12, // convert annual rate to monthky rate
+        year * 12, // convert years to months
         monthlyDeposit,
         initialDeposit,
         type
       );
 
       let investment = -futureValue(
-        oRate[0].investment / 12,
-        x * 12,
+        filteredRates[0].investment / 12,
+        year * 12,
         monthlyDeposit,
         initialDeposit,
         type
       );
 
       let annuity = -futureValue(
-        oRate[0].annuity / 12,
-        x * 12,
+        filteredRates[0].annuity / 12,
+        year * 12,
         monthlyDeposit,
         initialDeposit,
         type
@@ -226,7 +212,7 @@ const ChartContainer = () => {
       investment = investment - savings;
       annuity = annuity - investment - savings;
 
-      data.push({ x, savings, investment, annuity });
+      data.push({ year, savings, investment, annuity });
     }
 
     return data;

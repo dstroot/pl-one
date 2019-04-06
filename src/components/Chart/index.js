@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // recharts
 import {
@@ -54,5 +55,9 @@ const Chart = ({ data }) => (
     </div>
   </>
 );
+
+Chart.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Chart;
