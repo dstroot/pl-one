@@ -227,7 +227,7 @@ Array [
         </svg>
       </div>
       <div
-        className="col-md-6 text-center"
+        className="col-md-6 text-center mt-3"
       >
         <h1
           style={
@@ -247,154 +247,158 @@ Array [
           See how fast your money can grow!
         </p>
         <div
-          className="mt-4"
+          className="pl-4 pr-4"
         >
           <div
-            className="d-flex justify-content-between"
+            className="mt-3"
           >
             <div
-              className="text-muted"
+              className="d-flex justify-content-between"
             >
-              Initial Deposit
-            </div>
-            <div>
-              <h4
-                className="text-primary"
+              <div
+                className="text-muted"
               >
-                $50,000
-              </h4>
+                Initial Deposit
+              </div>
+              <div>
+                <h4
+                  className="text-primary"
+                >
+                  $50,000
+                </h4>
+              </div>
             </div>
-          </div>
-          <div
-            className="rc-slider"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchStart={[Function]}
-          >
             <div
-              className="rc-slider-rail"
-              style={Object {}}
-            />
-            <div
-              className="rc-slider-track"
-              style={
-                Object {
-                  "left": "0%",
-                  "width": "60.60606060606061%",
-                }
-              }
-            />
-            <div
-              className="rc-slider-step"
-            />
-            <div
-              aria-disabled={false}
-              aria-valuemax={99}
-              aria-valuemin={0}
-              aria-valuenow={60}
-              className="rc-slider-handle"
+              className="rc-slider"
               onBlur={[Function]}
+              onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseDown={[Function]}
-              role="slider"
-              style={
-                Object {
-                  "left": "60.60606060606061%",
-                }
-              }
-              tabIndex={0}
-            />
-            <div
-              className="rc-slider-mark"
-            />
-          </div>
-        </div>
-        <div
-          className="mt-4"
-        >
-          <div
-            className="d-flex justify-content-between"
-          >
-            <div
-              className="text-muted"
+              onMouseUp={[Function]}
+              onTouchStart={[Function]}
             >
-              Monthly Deposit
-            </div>
-            <div>
-              <h4
-                className="text-primary"
-              >
-                $1,000
-              </h4>
+              <div
+                className="rc-slider-rail"
+                style={Object {}}
+              />
+              <div
+                className="rc-slider-track"
+                style={
+                  Object {
+                    "left": "0%",
+                    "width": "60.60606060606061%",
+                  }
+                }
+              />
+              <div
+                className="rc-slider-step"
+              />
+              <div
+                aria-disabled={false}
+                aria-valuemax={99}
+                aria-valuemin={0}
+                aria-valuenow={60}
+                className="rc-slider-handle"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="slider"
+                style={
+                  Object {
+                    "left": "60.60606060606061%",
+                  }
+                }
+                tabIndex={0}
+              />
+              <div
+                className="rc-slider-mark"
+              />
             </div>
           </div>
           <div
-            className="rc-slider"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchStart={[Function]}
+            className="mt-3"
           >
             <div
-              className="rc-slider-rail"
-              style={Object {}}
-            />
+              className="d-flex justify-content-between"
+            >
+              <div
+                className="text-muted"
+              >
+                Monthly Deposit
+              </div>
+              <div>
+                <h4
+                  className="text-primary"
+                >
+                  $1,000
+                </h4>
+              </div>
+            </div>
             <div
-              className="rc-slider-track"
-              style={
-                Object {
-                  "left": "0%",
-                  "width": "53.535353535353536%",
-                }
-              }
-            />
-            <div
-              className="rc-slider-step"
-            />
-            <div
-              aria-disabled={false}
-              aria-valuemax={99}
-              aria-valuemin={0}
-              aria-valuenow={53}
-              className="rc-slider-handle"
+              className="rc-slider"
               onBlur={[Function]}
+              onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseDown={[Function]}
-              role="slider"
-              style={
-                Object {
-                  "left": "53.535353535353536%",
+              onMouseUp={[Function]}
+              onTouchStart={[Function]}
+            >
+              <div
+                className="rc-slider-rail"
+                style={Object {}}
+              />
+              <div
+                className="rc-slider-track"
+                style={
+                  Object {
+                    "left": "0%",
+                    "width": "53.535353535353536%",
+                  }
                 }
-              }
-              tabIndex={0}
-            />
-            <div
-              className="rc-slider-mark"
-            />
+              />
+              <div
+                className="rc-slider-step"
+              />
+              <div
+                aria-disabled={false}
+                aria-valuemax={99}
+                aria-valuemin={0}
+                aria-valuenow={53}
+                className="rc-slider-handle"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="slider"
+                style={
+                  Object {
+                    "left": "53.535353535353536%",
+                  }
+                }
+                tabIndex={0}
+              />
+              <div
+                className="rc-slider-mark"
+              />
+            </div>
           </div>
-        </div>
-        <div
-          className="mt-4"
-        >
           <div
-            className="d-flex justify-content-between"
+            className="mt-3"
           >
             <div
-              className="text-muted"
+              className="d-flex justify-content-between"
             >
-              Risk Level
-            </div>
-            <div>
-              <h4
-                className="text-primary"
+              <div
+                className="text-muted"
               >
-                Growth
-              </h4>
+                Risk Level
+              </div>
+              <div>
+                <h4
+                  className="text-primary"
+                >
+                  Growth
+                </h4>
+              </div>
             </div>
           </div>
           <div
@@ -533,7 +537,7 @@ Array [
       className="row mt-3"
     >
       <div
-        className="col-md-12"
+        className="col-md-12 mt-3"
       >
         <div
           className="recharts-responsive-container"

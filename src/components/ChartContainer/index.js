@@ -265,48 +265,50 @@ const ChartContainer = () => {
         <div className="col-md-6">
           <Savings className="d-block w-100" height={300} />
         </div>
-        <div className="col-md-6 text-center">
+        <div className="col-md-6 text-center mt-3">
           <h1 style={textBig}>Design Your Future</h1>
           <p className="lead text-muted mt-0">
             See how fast your money can grow!
           </p>
-          <div className="mt-4">
-            <div className="d-flex justify-content-between">
-              <div className="text-muted">Initial Deposit</div>
-              <div>
-                <h4 className="text-primary">
-                  {formatter.format(initial).slice(0, -3)}
-                </h4>
+          <div className="pl-4 pr-4">
+            <div className="mt-3">
+              <div className="d-flex justify-content-between">
+                <div className="text-muted">Initial Deposit</div>
+                <div>
+                  <h4 className="text-primary">
+                    {formatter.format(initial).slice(0, -3)}
+                  </h4>
+                </div>
               </div>
+              <Slider
+                min={0}
+                max={99}
+                defaultValue={logPosInitial(50000)}
+                onChange={changeInitial}
+              />
             </div>
-            <Slider
-              min={0}
-              max={99}
-              defaultValue={logPosInitial(50000)}
-              onChange={changeInitial}
-            />
-          </div>
-          <div className="mt-4">
-            <div className="d-flex justify-content-between">
-              <div className="text-muted">Monthly Deposit</div>
-              <div>
-                <h4 className="text-primary">
-                  {formatter.format(monthly).slice(0, -3)}
-                </h4>
+            <div className="mt-3">
+              <div className="d-flex justify-content-between">
+                <div className="text-muted">Monthly Deposit</div>
+                <div>
+                  <h4 className="text-primary">
+                    {formatter.format(monthly).slice(0, -3)}
+                  </h4>
+                </div>
               </div>
+              <Slider
+                min={0}
+                max={99}
+                defaultValue={logPosMonthly(1000)}
+                onChange={changeMonthly}
+              />
             </div>
-            <Slider
-              min={0}
-              max={99}
-              defaultValue={logPosMonthly(1000)}
-              onChange={changeMonthly}
-            />
-          </div>
-          <div className="mt-4">
-            <div className="d-flex justify-content-between">
-              <div className="text-muted">Risk Level</div>
-              <div>
-                <h4 className="text-primary">{riskDesc}</h4>
+            <div className="mt-3">
+              <div className="d-flex justify-content-between">
+                <div className="text-muted">Risk Level</div>
+                <div>
+                  <h4 className="text-primary">{riskDesc}</h4>
+                </div>
               </div>
             </div>
             <SliderWithTooltip
@@ -321,7 +323,7 @@ const ChartContainer = () => {
         </div>
       </div>
       <div className="row mt-3">
-        <div className="col-md-12">
+        <div className="col-md-12 mt-3">
           <Chart data={data} />
         </div>
       </div>
